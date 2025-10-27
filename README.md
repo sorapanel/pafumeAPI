@@ -12,7 +12,7 @@
 *   **メソッド:** `GET`
 *   **概要:** 香水の情報リストをJSON形式で返します。
 
-#### レスポンス例 (HTTP 200 OK)
+### レスポンス例 (HTTP 200 OK)
 
 ```json
 {
@@ -54,3 +54,33 @@
     ]
 }
 ```
+### レスポンスヘッダー
+HTTP 200 OK
+Allow: GET, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+### レスポンスフィールド
+| フィールド名    | 型       | 説明                                                 |
+| :-------------- | :------- | :--------------------------------------------------- |
+| `id`            | `integer` | 香水の一意な識別子                                   |
+| `categories`    | `array`  | 香水が属するカテゴリのリスト。各要素は以下の構造を持つ: |
+| &nbsp;&nbsp;`id` | `integer` | カテゴリの一意な識別子                               |
+| &nbsp;&nbsp;`category` | `string` | カテゴリ名 (例: "シトラス系", "フローラル系")       |
+| `title`         | `string` | 香水の商品名                                         |
+| `brand`         | `string` | ブランド名 (英語表記)                                |
+| `brandJp`       | `string` | ブランド名 (日本語表記)                              |
+| `description`   | `string` | 香水の商品概要・説明                                 |
+| `count`         | `integer` | 全体の香水情報の総数                                 |
+| `next`          | `string` | 次のページを取得するためのURL。最終ページの場合は `null` |
+| `previous`      | `string` | 前のページを取得するためのURL。最初のページの場合は `null` |
+### クエリパラメータ
+| フィールド名    | 型       | 説明                                                 |
+| :-------------- | :------- | :--------------------------------------------------- |
+| `category`    | `string`  | 香水が属するカテゴリ|
+| `title`         | `string` | 香水の商品名                                         |
+| `brand`         | `string` | ブランド名 (英語表記)                                |
+| `brandJp`       | `string` | ブランド名 (日本語表記)                              |
+| `page_size`      | `integer` | レスポンスのレコード数指定（デフォルト50, 最大200） |
+| `page`      | `integer` | ページ数の指定                                     |
+## Skill
+Django REST Framework

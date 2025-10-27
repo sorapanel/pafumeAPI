@@ -55,10 +55,10 @@
 }
 ```
 ### レスポンスヘッダー
-HTTP 200 OK
-Allow: GET, HEAD, OPTIONS
-Content-Type: application/json
-Vary: Accept
+HTTP 200 OK  
+Allow: GET, HEAD, OPTIONS  
+Content-Type: application/json  
+Vary: Accept  
 ### レスポンスフィールド
 | フィールド名    | 型       | 説明                                                 |
 | :-------------- | :------- | :--------------------------------------------------- |
